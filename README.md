@@ -15,6 +15,8 @@ cp secrets/store-47.key.example secrets/store-47.key
 cp secrets/store-102.key.example secrets/store-102.key
 npm install && npm run smoke
 ```
+<img width="397" height="113" alt="Screenshot 2026-07-07 at 6 03 46 PM" src="https://github.com/user-attachments/assets/d9c2fd44-e82d-4d08-a41a-daa97376ddbe" />
+
 
 ## What it is / the unit of work
 For one SKU at one store, reach a terminal state:
@@ -59,6 +61,10 @@ Keeping policy out of the tools keeps the server a thin, auditable data/authz la
 - Prod secrets come from **GCP Secret Manager** (see `DEPLOYMENT.md`).
 - Shipping into Korral's private GCP (StoreLink off the public internet, no
   customer data leaves the tenancy) is covered in `DEPLOYMENT.md`.
+
+<img width="403" height="609" alt="Screenshot 2026-07-07 at 6 03 23 PM" src="https://github.com/user-attachments/assets/0f9f4cb9-af50-4bd6-ae4a-2a96ae3fedb7" />
+<img width="400" height="707" alt="Screenshot 2026-07-07 at 6 03 35 PM" src="https://github.com/user-attachments/assets/00cbcfb9-523a-4c2d-947f-d74921acd0c8" />
+
 
 ## Run it
 ```bash
