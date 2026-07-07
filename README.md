@@ -89,3 +89,6 @@ is covered in `DEPLOYMENT.md`.
    order (gap 8), 102 does not (well stocked). Both branches shown.
 2. Store **55** has no key → safe, clear refusal.
 3. One buyer-readable audit line for the write in `audit.log`.
+
+4. <img width="584" height="775" alt="Screenshot 2026-07-07 at 6 00 37 PM" src="https://github.com/user-attachments/assets/4924c8cf-b0c0-4ece-9ed0-c93b87407790" />
+
