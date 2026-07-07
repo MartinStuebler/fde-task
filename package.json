@@ -6,7 +6,8 @@
   "description": "Duvo x Korral StoreLink MCP server (stdio) for SKU replenishment",
   "scripts": {
     "start": "tsx src/server.ts",
-    "smoke": "tsx scripts/smoke.ts"
+    "smoke": "tsx scripts/smoke.ts",
+    "test:stdio": "tsx scripts/test-stdio.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",

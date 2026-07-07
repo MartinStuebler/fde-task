@@ -1,3 +1,4 @@
+import "./stdout-guard.js"; // MUST be first: installs the stdout protection before anything can write.
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { readFileSync, existsSync } from "node:fs";
@@ -120,6 +121,14 @@ server.tool("get_sku", "Look up SKU catalog metadata.", { sku: z.string() },
 
 server.tool("get_supplier", "Look up supplier metadata.", { supplier_id: z.string() },
   tool("get_supplier", ({ supplier_id }) => ok(sl.getSupplier(supplier_id))));
+
+// --- Resilience: never crash the subprocess; log and keep serving ----------
+process.on("uncaughtException", (err) => {
+  logEvent({ level: "error", msg: "uncaughtException", error: String(err), stack: err?.stack });
+});
+process.on("unhandledRejection", (reason) => {
+  logEvent({ level: "error", msg: "unhandledRejection", reason: String(reason) });
+});
 
 // --- Boot -------------------------------------------------------------------
 const transport = new StdioServerTransport();
