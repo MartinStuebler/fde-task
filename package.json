@@ -1,0 +1,16 @@
+{
+  "name": "korral-storelink-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Duvo x Korral StoreLink MCP server (stdio) for SKU replenishment",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "tsx": "^4.19.2",
+    "zod": "^3.23.8"
+  }
+}

@@ -3,5 +3,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 3000
+# stdio MCP server: launched as a subprocess of the Duvo agent.
+# NO EXPOSE / no port — this is not an HTTP service.
 CMD ["npm", "start"]
